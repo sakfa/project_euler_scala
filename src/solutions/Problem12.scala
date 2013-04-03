@@ -16,7 +16,7 @@ object Problem12 {
     }
   }
 
-  val factorizer = new Factorizer(10000000)
+  val factorizer = Factorizer.forGreatestPrimeFactorLimitedTo(10000000)
 
   def divisors(factors: Map[Int, Int]) = {
     factors.values.map(_ + 1).product

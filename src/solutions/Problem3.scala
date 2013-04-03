@@ -5,7 +5,7 @@ import tools.TimeTool
 
 object Problem3 {
   def greatestPrimeFactor(n: Long) = {
-    val factorizer = new Factorizer(math.sqrt(n).ceil.toInt)
+    val factorizer = Factorizer.forFactorizedNumberLimitedTo(n.toInt)
     factorizer.factorize(n).keySet.max
   }
 

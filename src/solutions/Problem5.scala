@@ -1,6 +1,5 @@
 package solutions
 
-import math._
 import primes.Factorizer
 
 object Problem5 {
@@ -22,13 +21,10 @@ object Problem5 {
   //lets do more generic solution
   def smallestNumber(n: Int) = {
     require(n > 1, "Algorithm will fail for n's < 2")
+    val factorizer = Factorizer.forGreatestPrimeFactorLimitedTo(n)
 
-    //we will need to factorize at most n, so we need primes bound to sqrt(n)
-    val factorizer = new Factorizer(n)
-    var factors = Map[Int, Int]()
-
-    for (i <- 2 to n) {
-      factors = mergeFactors(factors, factorizer.factorize(i))
+    val factors = (factorizer.factorize(2) /: (3 to n)) { case (acc, i) =>
+      mergeFactors(acc, factorizer.factorize(i))
     }
 
     factors.map { entry: (Int,Int) =>
