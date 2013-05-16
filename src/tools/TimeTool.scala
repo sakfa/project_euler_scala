@@ -8,6 +8,11 @@ object TimeTool {
     time = Some(System.nanoTime())
   }
 
+  def printCurrent(header: String) {
+    print(header + " - ")
+    printCurrent
+  }
+
   def printCurrent {
     time match {
       case Some(nanos) => println("duration: " + formatNanos(System.nanoTime() - nanos))

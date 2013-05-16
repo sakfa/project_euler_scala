@@ -1,6 +1,6 @@
 package solutions
 
-import tools.TimeTool
+import tools.{DigitHelper, TimeTool}
 
 /**
 We shall say that an n-digit number is pandigital if it makes use of all the digits 1 to n exactly once; for example, the 5-digit number, 15234, is 1 through 5 pandigital.
@@ -13,8 +13,7 @@ HINT: Some products can be obtained in more than one way so be sure to only incl
  */
 object Problem32 {
   def isPandigital(multiplicand: Int, multiplier: Int, product: Int) = {
-    val concatenated = (multiplicand.toString + multiplier.toString + product.toString)
-    concatenated.length == 9 && concatenated.sortBy(_.toInt) == "123456789"
+    DigitHelper.is9Pandigital(multiplicand.toString + multiplier.toString + product.toString)
   }
 
   def main(args: Array[String]) {

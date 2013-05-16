@@ -13,6 +13,10 @@ class SieveOfAtkin(val limit: Int) extends Sieve {
     findPrimes()
   }
 
+  def init() {
+    sieve
+  }
+
   private def findPrimes(): Array[Boolean] = {
     println("(calculating sieve of atkin up to n = " + limit + ")")
     val isPrime = Array.fill[Boolean](limit + 1)(false)
@@ -48,6 +52,7 @@ class SieveOfAtkin(val limit: Int) extends Sieve {
 
     isPrime(2) = true
     isPrime(3) = true
+    println("(sieve calculation ended")
     isPrime
   }
 
