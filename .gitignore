@@ -1,3 +1,5 @@
+*.sublime_project
+*.sublime_workspace
 **/out/**
 **/.idea/**
 *.iml

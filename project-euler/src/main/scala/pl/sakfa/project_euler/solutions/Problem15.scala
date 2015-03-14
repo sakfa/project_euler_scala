@@ -1,3 +1,5 @@
+package pl.sakfa.project_euler.solutions;
+
 import pl.sakfa.project_euler.tools.TimeTool
 
 object Problem15 {

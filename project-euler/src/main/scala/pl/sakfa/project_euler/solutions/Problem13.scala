@@ -105,12 +105,9 @@ object Problem13 extends App {
       |53503534226472524250874054075591789781264330331690
     """.stripMargin.trim
 
-  println(
-    inputs.split("\\n").map { (x:String) =>
+  var sum = inputs.split("\\n").map { (x:String) =>
       BigInt(x.trim())
     }.sum
-  )
 
-  //map(BigInt(_)).foreach(println)
-    //.sum.toString()
+  println(sum.toString.substring(0, 10));
 }

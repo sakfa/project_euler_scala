@@ -1,3 +1,5 @@
+package pl.sakfa.project_euler.solutions;
+
 import math.BigInt
 
 object Problem16 {

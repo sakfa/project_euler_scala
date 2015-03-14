@@ -1,3 +1,5 @@
+package pl.sakfa.project_euler.solutions;
+
 import collection.mutable.ListBuffer
 
 import collection.mutable

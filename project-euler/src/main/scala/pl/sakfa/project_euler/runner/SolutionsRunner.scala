@@ -7,7 +7,13 @@ object SolutionsRunner extends Logging {
   val myClassLoader = getClass.getClassLoader
 
   def main(args: Array[String]) {
-    (1 to 51).foreach { i =>
+
+    val bounds = args.map(_.toInt);
+    val range =
+      if (bounds.length == 0) (1 to 51)
+      else (bounds.head to bounds.tail.headOption.getOrElse(bounds.head))
+
+    range.foreach { i =>
       logger.info(s"Running solution for problem $i")
       run(s"pl.sakfa.project_euler.solutions.Problem$i")
     }
@@ -20,6 +26,7 @@ object SolutionsRunner extends Logging {
       testMainMethod.invoke(null, Array("runner"))
       TimeTool.printAndStop()
     } catch {
+      case notFound: java.lang.ClassNotFoundException => logger.error(s"No solution found for problem $name")
       case t: Throwable => logger.error(s"Error while running solution $name", t)
     }
   }

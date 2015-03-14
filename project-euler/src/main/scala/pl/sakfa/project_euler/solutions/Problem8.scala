@@ -1,6 +1,5 @@
 package pl.sakfa.project_euler.solutions
 
-
 object Problem8 {
   val given =
     """
@@ -31,9 +30,9 @@ object Problem8 {
     given.split("\n").map(_.trim).foreach(s => search += s)
 
     val result =
-      ((search sliding 5) //iterates over above number with constant width window of 5 elements. This 5-char window will be inferred as String
+      ((search sliding 13) //iterates over above number with constant width window of 5 elements. This 5-char window will be inferred as String
         .map( digitSeq => //here we will map 5 digits long Strings into product of these digits
-        digitSeq.map(_.toInt-0x30) //will convert digits ("Chars") to actual numbers (Ints)
+        digitSeq.map(digit => BigInt(digit.toInt-0x30)) //will convert digits ("Chars") to actual numbers (Ints)
           .product
       )
         ).max //grab maximum
