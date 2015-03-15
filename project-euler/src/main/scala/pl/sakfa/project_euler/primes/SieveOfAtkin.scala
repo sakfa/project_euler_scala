@@ -9,7 +9,7 @@ object SieveOfAtkin {
 }
 
 class SieveOfAtkin(val limit: Int) extends Sieve with Logging {
-  require(limit > 5, "this class is optimized for sieves for at least 5 primes")
+  require(limit > 5, "this class is optimized for sieves of at least 5 primes")
 
   override lazy val sieve = {
     findPrimes()
