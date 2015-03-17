@@ -10,7 +10,7 @@ object SolutionsRunner extends Logging {
 
     val bounds = args.map(_.toInt);
     val range =
-      if (bounds.length == 0) (1 to 51)
+      if (bounds.length == 0) (1 to 57)
       else (bounds.head to bounds.tail.headOption.getOrElse(bounds.head))
 
     range.foreach { i =>

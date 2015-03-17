@@ -12,5 +12,6 @@ libraryDependencies ++= Seq(
     "com.typesafe" %% "scalalogging-slf4j" % "1.0.1",
     "org.slf4j" % "slf4j-log4j12" % "1.7.5",
     "log4j" % "log4j" % "1.2.17",
-    "com.github.nscala-time" %% "nscala-time" % "1.8.0"
+    "com.github.nscala-time" %% "nscala-time" % "1.8.0",
+    "org.apache.commons" % "commons-math3" % "3.4.1"
 )
